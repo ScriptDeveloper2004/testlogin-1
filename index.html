@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyQuiz - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #quiz-container, #profile-popup {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        #submit-btn, #profile-circle {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #submit-btn:hover, #profile-circle:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to MyQuiz</h1>
+</header>
+
+<!-- Quiz Container -->
+<div id="quiz-container">
+    <div class="question">
+        <p>1. What is the capital of France?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="Paris"> Paris</label>
+            <label><input type="radio" name="q1" value="Berlin"> Berlin</label>
+            <label><input type="radio" name="q1" value="London"> London</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2. What is the largest planet in our solar system?</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="Mars"> Mars</label>
+            <label><input type="radio" name="q2" value="Jupiter"> Jupiter</label>
+            <label><input type="radio" name="q2" value="Venus"> Venus</label>
+        </div>
+    </div>
+
+    <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+</div>
+
+<!-- Profile Circle -->
+<div id="profile-circle" onclick="toggleProfilePopup()" style="display: none;">P</div>
+
+<!-- Profile Popup -->
+<div id="profile-popup">
+    <h3>User Profile</h3>
+    <p>Edit your profile</p>
+    <button onclick="editProfile()">Edit Profile</button>
+    <button onclick="deleteAccount()">Delete Account</button>
+    <button onclick="addBio()">Add Bio</button>
+</div>
+
+<script>
+    function submitQuiz() {
+        // Implement quiz submission logic (display results, etc.)
+        alert('Quiz submitted! Display results or redirect to the next page.');
+    }
+
+    function toggleProfilePopup() {
+        const profilePopup = document.getElementById('profile-popup');
+        profilePopup.style.display = (profilePopup.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function editProfile() {
+        // Implement edit profile logic
+        alert('Editing profile...');
+        toggleProfilePopup();
+    }
+
+    function deleteAccount() {
+        // Implement delete account logic
+        alert('Deleting account...');
+        // Redirect to login or registration page after account deletion
+    }
+
+    function addBio() {
+        // Implement add bio logic
+        alert('Adding bio...');
+        toggleProfilePopup();
+    }
+</script>
+
+</body>
+</html>
